@@ -7,6 +7,7 @@ use std::io::Write;
 use std::str::FromStr;
 
 fn gcd(mut n: u64, mut m: u64) -> u64 {
+    // In case of 0 there will be panic: assertion failed: n != 0 && m != 0
     assert!(n != 0 && m != 0);
     while m != 0 {
         if m < n {
@@ -20,7 +21,7 @@ fn gcd(mut n: u64, mut m: u64) -> u64 {
     n
 }
 
-#[test] // attribute
+#[test] // attribute, f.e. #[test], should be above function
 fn test_gcd(){
     assert_eq!(gcd(14,15), 1);
     assert_eq!(gcd(10,30), 10);
